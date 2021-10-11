@@ -6,3 +6,22 @@
     </a>
   </li>
 </ul>
+<div>
+  <label>Club name: </label>
+  <input id="new-name" #clubName/>
+  <br>
+  <label>Club manager: </label>
+  <input id="new-manager" #manager/>
+  <br>
+  <label>Founded: </label>
+  <input id="new-founded" #founded/>
+  <button class="add-button"
+          (click)="
+              add(clubName.value,manager.value,founded.value);
+              clubName.value='';
+              manager.value='';
+              founded.value='';
+      ">
+    Add Club
+  </button>
+</div>

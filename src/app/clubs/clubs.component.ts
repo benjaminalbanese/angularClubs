@@ -20,4 +20,17 @@ export class ClubsComponent implements OnInit {
   getClubs(): void {
     this.clubService.getClubs().subscribe(fetched => this.clubs = fetched);
   }
+
+  add(name: string, manager: string, founded: string) {
+    name = name.trim();
+    manager = manager.trim();
+    founded = founded.trim();
+    if (!name || !manager || !founded) {
+      console.log("at least one value was falsy");
+      return;
+    }
+    this.clubService.addClub({name, manager, founded} as Club).subscribe(club => this.clubs.push(club));
+
+
+  }
 }

@@ -31,4 +31,10 @@ export class ClubDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    if (this.club) {
+      this.clubService.updateClub(this.club).subscribe(() => this.goBack())
+    }
+  }
 }
