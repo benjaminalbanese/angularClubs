@@ -1,10 +1,10 @@
-.heroes {
+.clubs {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.heroes li {
+.clubs li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -14,24 +14,24 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.heroes li:hover {
+.clubs li:hover {
   color: #2c3a41;
   background-color: #e6e6e6;
   left: .1em;
 }
-.heroes li.selected {
+.clubs li.selected {
   background-color: rgb(9, 11, 138);
   color: white;
 }
-.heroes li.selected:hover {
+.clubs li.selected:hover {
   background-color: rgba(3, 55, 134, 0.5);
   color: white;
 }
-.heroes li.selected:active {
+.clubs li.selected:active {
   background-color: black;
   color: white;
 }
-.heroes .badge {
+.clubs .badge {
   display: inline-block;
   font-size: small;
   color: white;
