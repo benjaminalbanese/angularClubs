@@ -5,8 +5,8 @@
     <label for="club-name">Club name: </label>
     <input id="club-name" [(ngModel)]="club.name" placeholder="name">
   </div>
-  <div><span>founded: </span>{{club.founded}}</div>
-  <div><span>manager: </span>{{club.manager}}</div>
+  <div><label>founded: </label>{{club.founded}}</div>
+  <div><label>manager: </label>{{club.manager}}</div>
 </div>
 <button (click)="goBack()">go back</button>
 <button (click)="save()">save</button>

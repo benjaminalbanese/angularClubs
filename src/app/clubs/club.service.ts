@@ -57,11 +57,19 @@ export class ClubService {
     )
   }
 
-  addClub(club: Club) : Observable<Club> {
+  addClub(club: Club): Observable<Club> {
     return this.http.post<Club>(`${this.apiUrl}/addClub`, club, this.httpOptions).pipe(
       tap((club: Club) => this.log(`added hero w/ id=${club.id}`)),
       catchError(this.handleError<Club>('addClub'))
     )
 
+  }
+
+  deleteClub(club: Club) {
+    const combinedHttpOptions = { headers: this.httpOptions.headers, body: club}
+    return this.http.delete<Club>(`${this.apiUrl}/deleteClub`, combinedHttpOptions).
+    pipe(
+      tap((club:Club) => this.log(`deleted club ${club}`)),
+      catchError(this.handleError<Club>(`deleteClub, id=${club.id}`)))
   }
 }

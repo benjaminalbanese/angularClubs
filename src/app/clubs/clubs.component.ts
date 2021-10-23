@@ -30,7 +30,10 @@ export class ClubsComponent implements OnInit {
       return;
     }
     this.clubService.addClub({name, manager, founded} as Club).subscribe(club => this.clubs.push(club));
+  }
 
-
+  delete(club: Club) : void {
+    this.clubs = this.clubs.filter(item => item !== club)
+    this.clubService.deleteClub(club).subscribe();
   }
 }
